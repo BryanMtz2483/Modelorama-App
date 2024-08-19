@@ -40,4 +40,4 @@ Route::get('/index-producto', [Crear_Producto::class, 'index']);
 
 Route::get('/create-producto', [Crear_Producto::class, 'create']);
 
-Route::get('/show-producto',[Crear_Producto::class, 'show']);
+Route::get('/show-producto/{product}',[Crear_Producto::class, 'show']);
