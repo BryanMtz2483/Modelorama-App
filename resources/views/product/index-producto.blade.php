@@ -1,5 +1,5 @@
 <x-app-layout>
-    LISTADO DE PRODUCTOS
+    <div class="text-red-600 text-4xl font-extrabold text-gray-900 dark:text-white">LISTADO DE PRODUCTOS</div>
     
     <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
         <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
