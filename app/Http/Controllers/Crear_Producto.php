@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class Crear_Producto extends Controller
 {
     public function index(){
-        return view('product.index-producto');
+        $productos = Product::all();
+        return view('product.index-producto', compact('productos'));
     }
     public function create(){
         return view('product.create-producto');

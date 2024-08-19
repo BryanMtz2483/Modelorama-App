@@ -1,3 +1,3 @@
 <x-app-layout>
-    Pagina show de producto
+    PAGINA SHOW
 </x-app-layout>
