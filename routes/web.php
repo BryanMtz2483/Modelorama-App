@@ -36,8 +36,8 @@ Route::get('/index-productos', function(){
 
 });
 
-Route::get('/index-producto', [Crear_Producto::class, 'index']);
+Route::get('/p-index', [Crear_Producto::class, 'index'])->name('producto.index');
 
-Route::get('/create-producto', [Crear_Producto::class, 'create']);
+Route::get('/p-create', [Crear_Producto::class, 'create'])->name('producto.create');
 
-Route::get('/show-producto/{product}',[Crear_Producto::class, 'show']);
+Route::get('/p-show/{product}',[Crear_Producto::class, 'show'])->name('producto.show');
