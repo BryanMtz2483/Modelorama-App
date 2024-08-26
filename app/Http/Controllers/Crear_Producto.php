@@ -18,4 +18,17 @@ class Crear_Producto extends Controller
         $productDetail = Product::find($product);
         return view('product.show-producto', compact('productDetail'));
     }
+    public function store (Request $request){
+        $product = new Product();
+
+        $product->name = $request->name;
+        $product->branch = $request->branch;
+        $product->product_number = $request->product_number;
+        $product->price = $request->price;
+        $product->desc = $request->desc;
+        
+        $product->save();
+
+        return redirect()->route('producto.index');
+    }
 }

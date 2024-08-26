@@ -36,8 +36,10 @@ Route::get('/index-productos', function(){
 
 });
 
-Route::get('/p-index', [Crear_Producto::class, 'index'])->name('producto.index');
+Route::get('/product', [Crear_Producto::class, 'index'])->name('producto.index');
 
-Route::get('/p-create', [Crear_Producto::class, 'create'])->name('producto.create');
+Route::get('/product-create', [Crear_Producto::class, 'create'])->name('producto.create');
 
-Route::get('/p-show/{product}',[Crear_Producto::class, 'show'])->name('producto.show');
+Route::post('/product', [Crear_Producto::class, 'store'])->name('producto.store');
+
+Route::get('/product-show/{product}',[Crear_Producto::class, 'show'])->name('producto.show');
