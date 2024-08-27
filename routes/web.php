@@ -43,3 +43,9 @@ Route::get('/product-create', [Crear_Producto::class, 'create'])->name('producto
 Route::post('/product', [Crear_Producto::class, 'store'])->name('producto.store');
 
 Route::get('/product-show/{product}',[Crear_Producto::class, 'show'])->name('producto.show');
+
+Route::get('/product-update/{product}', [Crear_Producto::class, 'update'])->name('producto.update');
+
+Route::put('/product-change/{product}', [Crear_Producto::class, 'change'])->name('producto.change');
+
+Route::get('/product-delete/{product}', [Crear_Producto::class, 'delete'])->name('producto.delete');

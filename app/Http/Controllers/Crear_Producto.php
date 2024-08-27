@@ -31,4 +31,29 @@ class Crear_Producto extends Controller
 
         return redirect()->route('producto.index');
     }
+    public function update($product){
+        $lastProduct = Product::find($product);
+        return view('product.update-producto',compact('lastProduct'));
+
+    }
+    /*public function change(Request $request, $id){
+        $actualizar = Product::findOrFail($id);
+
+        $actualizar->name = $request->name;
+        $actualizar->branch = $request->branch;
+        $actualizar->product_number = $request->product_number;
+        $actualizar->price = $request->price;
+        $actualizar->desc = $request->desc;
+
+        $actualizar->save();
+        return redirect()-> route('producto.index')->with('edited','Producto Actualizado');
+    }*/
+    public function delete($product){
+        
+        $eliminar = Product::findOrFail($product);
+
+        $eliminar -> delete();
+        
+        return redirect()-> route('producto.index')->with('success','Producto Borrado');
+    }
 }
