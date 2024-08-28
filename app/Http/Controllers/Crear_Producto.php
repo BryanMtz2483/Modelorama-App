@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class Crear_Producto extends Controller
 {
     public function index(){
-        $productos = Product::paginate();
+        $productos = Product::orderBy('id','desc')-> paginate();
         return view('product.index-producto', compact('productos'));
     }
     public function create(){
@@ -34,20 +34,18 @@ class Crear_Producto extends Controller
     public function update($product){
         $lastProduct = Product::find($product);
         return view('product.update-producto',compact('lastProduct'));
-
     }
-    /*public function change(Request $request, $id){
-        $actualizar = Product::findOrFail($id);
+    public function change(Request $request, $id){
+        $product = Product::findOrFail($id);
 
-        $actualizar->name = $request->name;
-        $actualizar->branch = $request->branch;
-        $actualizar->product_number = $request->product_number;
-        $actualizar->price = $request->price;
-        $actualizar->desc = $request->desc;
-
-        $actualizar->save();
+        $product->name = $request->name;
+        $product->branch = $request->branch;
+        $product->product_number = $request->product_number;
+        $product->price = $request->price;
+        $product->desc = $request->desc;
+        $product->save();
         return redirect()-> route('producto.index')->with('edited','Producto Actualizado');
-    }*/
+    }
     public function delete($product){
         
         $eliminar = Product::findOrFail($product);

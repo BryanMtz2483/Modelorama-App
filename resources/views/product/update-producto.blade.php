@@ -11,7 +11,7 @@
         </a>
     </div>
     <div class="mt-8">
-    <form class="max-w-sm mx-auto" action="{{route('producto.index')}}" method="POST">
+    <form class="max-w-sm mx-auto" action="{{route('producto.change',$lastProduct->id)}}" method="POST">
         @csrf
         @method('PUT')
         <div class="mb-5">
