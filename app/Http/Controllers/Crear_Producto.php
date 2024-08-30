@@ -44,7 +44,7 @@ class Crear_Producto extends Controller
         $product->price = $request->price;
         $product->desc = $request->desc;
         $product->save();
-        return redirect()-> route('producto.index')->with('edited','Producto Actualizado');
+        return redirect()-> route('producto.show', $product)->with('edited','Producto Actualizado');
     }
     public function delete($product){
         

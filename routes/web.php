@@ -48,4 +48,4 @@ Route::get('/product-update/{product}', [Crear_Producto::class, 'update'])->name
 
 Route::put('/product-change/{id}', [Crear_Producto::class, 'change'])->name('producto.change');
 
-Route::get('/product-delete/{product}', [Crear_Producto::class, 'delete'])->name('producto.delete');
+Route::delete('/product-delete/{product}', [Crear_Producto::class, 'delete'])->name('producto.delete');
