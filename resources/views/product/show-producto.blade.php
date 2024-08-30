@@ -45,12 +45,9 @@
                 </div>
             </div>
     @endif
-
+<br> <br> <br> <br> <br>
     <div id = "todoElProducto">
         <div class="p-5">
-            <a href="{{route('producto.index')}}" type="button" class="text-white bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">
-                REGRESAR A INDEX
-            </a>
             <a href="#">
                 <img class="rounded-t-lg" src="https://ambar.com/wp-content/uploads/2019/05/Cerveza-scaled.jpg" alt="" />
             </a>
@@ -79,11 +76,29 @@
             <p class="text-2xl font-thin text-gray-900 dark:text-white">{{$productDetail->price}}</p>
             <br>
         </div>
-        <form action="{{route('producto.delete',$productDetail->id)}}" method="post">
+        <form action="{{route('producto.delete',$productDetail->id)}}" method="post" id="eliminate-form">
             @csrf
             @method('DELETE')
-            <button href="" type="submit" class="text-white bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">ELIMINAR</button>
+            <button onclick="confirmar_eliminar()" type="button" class="text-white bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">ELIMINAR</button>
             </form>
         <a href="{{route('producto.update',$productDetail->id)}}" id="btnupdate" type="button" class="text-white bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">ACTUALIZAR</a>
     </div>
+    <script>
+    function confirmar_eliminar() {
+        Swal.fire({
+            title: '¿Estás seguro?',
+            text: 'Esta acción no se puede deshacer.',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#d33',
+            cancelButtonColor: '#3085d6',
+            confirmButtonText: 'Delete',
+            cancelButtonText: 'Cancel',  
+        }).then((result) => {
+            if (result.isConfirmed) {
+                document.getElementById('eliminate-form').submit();
+            }
+        });
+    }
+</script>
 </x-app-layout>
