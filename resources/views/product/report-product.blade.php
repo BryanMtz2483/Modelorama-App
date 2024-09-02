@@ -8,7 +8,30 @@
     <title>Reporte</title>
 </head>
 <body>
-    {{$products}}
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Marca</th>
+            <th scope="col">Descripcion</th>
+            <th scope="col">Precio</th>
+          </tr>
+        </thead>
+        <tbody>
+            @foreach ( $products as $product )
+                <tr>
+                    <th scope="row">{{$product->id}}</th>
+                    <td>{{$product->name}}</td>
+                    <td>{{$product->branch}}</td>
+                    <td>{{$product->desc}}</td>
+                    <td>{{$product->price}}</td>
+                </tr>
+            @endforeach
 
+          
+        </tbody>
+      </table>
 </body>
+
 </html>

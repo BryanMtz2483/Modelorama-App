@@ -44,12 +44,11 @@ Route::post('/product', [Crear_Producto::class, 'store'])->name('producto.store'
 
 Route::get('/product-show/{product}',[Crear_Producto::class, 'show'])->name('producto.show');
 
-<<<<<<< HEAD
-Route::get('/products-report', [Crear_Producto::class, 'getReport'])->name('producto.report');
-=======
+
 Route::get('/product-update/{product}', [Crear_Producto::class, 'update'])->name('producto.update');
 
 Route::put('/product-change/{id}', [Crear_Producto::class, 'change'])->name('producto.change');
 
 Route::delete('/product-delete/{product}', [Crear_Producto::class, 'delete'])->name('producto.delete');
->>>>>>> rama-editar
+
+Route::get('/products-report', [Crear_Producto::class, 'getReport'])->name('producto.report');

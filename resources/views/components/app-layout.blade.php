@@ -14,7 +14,7 @@
             background-color: darkblue;
             color: white;
             border-radius: 20px;
-            width: 150px;
+            width: 120px;
             height: 40px;
             align-items: center;
             text-align: center;
@@ -54,6 +54,7 @@
         <li>
             <a href="{{route('producto.index')}}" type="button" class="btnav" aria-current="page">Home</a>
             <a href="{{route('producto.create')}}" type="button" class="btnav"aria-current="page">Agregar</a>
+            <a href="{{route('producto.report')}}" type="button" class="btnav"aria-current="page">Inventario</a>
         </li>
         <li>
         </ul>
