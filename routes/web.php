@@ -43,3 +43,5 @@ Route::get('/product-create', [Crear_Producto::class, 'create'])->name('producto
 Route::post('/product', [Crear_Producto::class, 'store'])->name('producto.store');
 
 Route::get('/product-show/{product}',[Crear_Producto::class, 'show'])->name('producto.show');
+
+Route::get('/products-report', [Crear_Producto::class, 'getReport'])->name('producto.report');

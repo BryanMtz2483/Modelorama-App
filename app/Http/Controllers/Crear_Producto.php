@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Barryvdh\DomPDF\Facade\Pdf;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
@@ -30,5 +30,10 @@ class Crear_Producto extends Controller
         $product->save();
 
         return redirect()->route('producto.index');
+    }
+    public function getReport(){
+        $products = Product::all();
+        $pdf = Pdf::loadView('product.report-product', compact('products'));
+        return $pdf->stream('reporte-productos.pdf');
     }
 }
